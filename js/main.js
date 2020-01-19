@@ -9,6 +9,9 @@ var $bgImg_1 = "images/bg/herfBg_1.jpg";
 var $bgImg_2 = "images/bg/herfBg_2.jpg";
 var $bgImg_3 = "images/bg/herfBg_3.jpg";
 
+// Set Animation Timelines.
+var $titleLoadTL;
+
 var $jsLinks = [
     'js/TweenMax.min.js'
 ];
@@ -34,7 +37,21 @@ function start() {
 
 function titleLoad() {
     trace('titleLoad');
-    TweenLite.to("#title",3,{opacity:1});
+
+    $titleLoadTL = new TimelineLite({paused: true});
+
+    $titleLoadTL
+        .addLabel("pre")
+        .to("#title",3,{opacity:1})
+        .addLabel("start")
+        // .to("#title_fae_old",2,{opacity:0},"start")
+        // .to("#title_fae_new",2,{opacity:1},"start")
+    ;
+
+    $titleLoadTL.play();
+
+    // from(c.dom.autoFrame,0.5,{height:"100px",ease:ease1},"start").
+    // to(c.dom.autoRating,0.5,{opacity:1},"start")
 
 }
 

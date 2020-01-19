@@ -218,8 +218,8 @@ h4 {
 }
 
 .bg-title {
-    opacity: 0.8;
-    font-size: 30vmin;
+    opacity: 0.7;
+    font-size: 16vmin;
     white-space: nowrap;
     /*color: #888;*/
     color: whitesmoke;
@@ -240,7 +240,7 @@ h4 {
     opacity: 0;
     /* padding: 10px; */
     position: absolute;
-    top: 13%;
+    top: 10%;
     left: 50%;
     text-align: center;
     margin-right: auto;
@@ -250,7 +250,7 @@ h4 {
 
 
 #title h1 {
-    font-size: 12vmin;
+    font-size: 15vmin;
     opacity: 0.5;
     color: whitesmoke;
     /*color: rgba(245, 245, 245);*/
