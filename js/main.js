@@ -31,7 +31,7 @@ function init() {
 function start() {
     trace('start');
     titleLoad();
-    slideShow("intro-bg",15,5,0.5,0);
+    slideShow("intro-bg",30,5,0.5,0);
     footerLoad();
 }
 
@@ -72,10 +72,10 @@ function footerLoad() {
 
 var $slides;
 // var $slides = document.getElementsByClassName("intro-bg"); //slides
-var currentSlide = 0; //keep track on the current slide
 var stayTime; //time the slide stays
 var slideTime; //fade in / fade out time
 var alphaSet;
+var currentSlide = 0; //keep track on the current slide
 
 function slideShow(slideClass,sTime,tTime,alpha,current) {
     $slides = document.getElementsByClassName(slideClass); //slides
