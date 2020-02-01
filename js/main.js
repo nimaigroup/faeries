@@ -4,13 +4,16 @@
 
 var $debug = true;
 
-var $bgImage = document.getElementById("bgImage");
-var $bgImg_1 = "images/bg/herfBg_1.jpg";
-var $bgImg_2 = "images/bg/herfBg_2.jpg";
-var $bgImg_3 = "images/bg/herfBg_3.jpg";
+var c = {};
 
 // Set Animation Timelines.
 var $titleLoadTL;
+
+// var autoTL = new TimelineLite({paused: true});
+// var userTL = new TimelineLite({paused: true});
+// var endTL = new TimelineLite({paused: true});
+
+
 
 var $jsLinks = [
     'js/TweenMax.min.js'
@@ -23,16 +26,40 @@ function trace(value) {
     }
 }
 
-function init() {
-    trace('init');
+function preInit() {
+    trace('preInit');
+    setupDom();
     loadJS($jsLinks);
+
 }
 
+function setupDom() {
+    trace('setupDom');
+    c.dom = {};
+    c.dom.nextSlide = document.getElementsByClassName('bg-title');
+    c.dom.title = document.getElementById('title');
+
+}
+
+function init() {
+    trace('init');
+
+    addListeners();
+    start();
+}
+
+function addListeners() {
+    trace('addListeners');
+    // c.dom.nextSlide.addEventListener('click', nextSlide);
+    c.dom.title.addEventListener('click', nextSlide);
+
+}
 function start() {
     trace('start');
     titleLoad();
-    slideShow("intro-bg",30,5,0.5,0);
+    slideShow("intro-bg",15,5,0.5,0);
     footerLoad();
+
 }
 
 function titleLoad() {
@@ -89,8 +116,12 @@ function slideShow(slideClass,sTime,tTime,alpha,current) {
         TweenLite.delayedCall(stayTime, nextSlide); //start the slideshow
     }});	//hide all images
 
+
+
+
 }
 function nextSlide() {
+    trace('nextSlide');
     TweenLite.to($slides[currentSlide], slideTime, {
         autoAlpha: 0,
         className: "-=bg-active"
@@ -111,7 +142,7 @@ function nextSlide() {
 function loadJS(link) {
     loadScripts(link,function(){
         trace('Scripts loaded');
-        start();
+        init();
     });
 }
 
@@ -162,4 +193,4 @@ var canOnlyFireOnce = once(function() {
 
 
 
-window.addEventListener('load', init);
+window.addEventListener('load', preInit);

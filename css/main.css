@@ -229,6 +229,8 @@ h4 {
     left: 90%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+    z-index: 200;
+
 }
 
 /*#slideshow .bg-image  {*/
@@ -246,12 +248,13 @@ h4 {
     margin-right: auto;
     margin-left: auto;
     transform: translate(-50%, -50%);
+    z-index: 500;
 }
 
 
 #title h1 {
     font-size: 15vmin;
-    opacity: 0.7;
+    opacity: 0.5;
     color: whitesmoke;
     /*color: rgba(245, 245, 245);*/
     /*text-shadow: 2px 2px #999999;*/
@@ -282,7 +285,7 @@ h4 {
 }
 
 .nimaiFooterCredit {
-    font-size: 1.5vmin;
+    font-size: 2.2vmin;
     padding-bottom: 5px;
     white-space: nowrap;
 }
